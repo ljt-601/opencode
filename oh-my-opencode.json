@@ -1,0 +1,54 @@
+{
+  // Oh My OpenCode 配置
+  // 用户订阅情况: Claude=no, OpenAI=no, Gemini=no, Copilot=no
+  // 使用智谱AI (GLM-5-Turbo) via zhipuai-coding-plan
+  "agents": {
+    "sisyphus": {
+      "model": "zhipuai-coding-plan/glm-5-turbo",
+      "temperature": 0.7
+    },
+    "oracle": {
+      "model": "zhipuai-coding-plan/glm-5-turbo",
+      "temperature": 0.5
+    },
+    "librarian": {
+      "model": "zhipuai-coding-plan/glm-5-turbo",
+      "temperature": 0.3
+    },
+    "explore": {
+      "model": "zhipuai-coding-plan/glm-5-turbo",
+      "temperature": 0.2
+    },
+    "frontend-engineer": {
+      "model": "zhipuai-coding-plan/glm-5-turbo",
+      "temperature": 0.5
+    }
+  },
+  "disabled_hooks": [],
+  "lsp": {
+    "jdtls": {
+      "command": ["/opt/homebrew/bin/python3", "/Users/bryle/.local/share/opencode/bin/jdtls-server/bin/jdtls.py"],
+      "extensions": [".java"],
+      "env": {
+        "JAVA_HOME": "/Users/bryle/.sdkman/candidates/java/21.0.9-amzn"
+      }
+    }
+  },
+  "mcpServers": {
+    "enabled": {
+      "websearch": {
+        "command": "npx",
+        "args": ["-y", "@modelcontextprotocol/server-exa"],
+        "disabled": false
+      },
+      "context7": {
+        "command": "npx",
+        "args": ["-y", "@modelcontextprotocol/server-context7"],
+        "disabled": false
+      }
+    }
+  },
+  "background_tasks": {
+    "concurrency_limit": 3
+  }
+}

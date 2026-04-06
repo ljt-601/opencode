@@ -1,0 +1,363 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "autoupdate": true,
+  "compaction": {
+    "auto": true,
+    "prune": true
+  },
+  "snapshot": false,
+  "model": "anthropic/claude-sonnet-4-5",
+  "permission": {
+    "bash": "ask",
+    "edit": "ask"
+  },
+  "plugin": [
+    "opencode-antigravity-auth@latest",
+    "oh-my-openagent@latest"
+  ],
+  "provider": {
+    "google": {
+      "models": {
+        "claude-opus-4-5-thinking": {
+          "limit": {
+            "context": 200000,
+            "output": 64000
+          },
+          "modalities": {
+            "input": [
+              "text",
+              "image",
+              "pdf"
+            ],
+            "output": [
+              "text"
+            ]
+          },
+          "name": "Claude Opus 4.5 Thinking",
+          "variants": {
+            "low": {
+              "thinkingConfig": {
+                "thinkingBudget": 8192
+              }
+            },
+            "max": {
+              "thinkingConfig": {
+                "thinkingBudget": 32768
+              }
+            }
+          }
+        },
+        "claude-sonnet-4-5": {
+          "limit": {
+            "context": 200000,
+            "output": 64000
+          },
+          "modalities": {
+            "input": [
+              "text",
+              "image",
+              "pdf"
+            ],
+            "output": [
+              "text"
+            ]
+          },
+          "name": "Claude Sonnet 4.5"
+        },
+        "claude-sonnet-4-5-thinking": {
+          "limit": {
+            "context": 200000,
+            "output": 64000
+          },
+          "modalities": {
+            "input": [
+              "text",
+              "image",
+              "pdf"
+            ],
+            "output": [
+              "text"
+            ]
+          },
+          "name": "Claude Sonnet 4.5 Thinking",
+          "variants": {
+            "low": {
+              "thinkingConfig": {
+                "thinkingBudget": 8192
+              }
+            },
+            "max": {
+              "thinkingConfig": {
+                "thinkingBudget": 32768
+              }
+            }
+          }
+        },
+        "gemini-2.5-flash": {
+          "limit": {
+            "context": 1048576,
+            "output": 65536
+          },
+          "modalities": {
+            "input": [
+              "text",
+              "image",
+              "pdf"
+            ],
+            "output": [
+              "text"
+            ]
+          },
+          "name": "Gemini 2.5 Flash"
+        },
+        "gemini-2.5-pro": {
+          "limit": {
+            "context": 1048576,
+            "output": 65536
+          },
+          "modalities": {
+            "input": [
+              "text",
+              "image",
+              "pdf"
+            ],
+            "output": [
+              "text"
+            ]
+          },
+          "name": "Gemini 2.5 Pro"
+        },
+        "gemini-3-flash": {
+          "limit": {
+            "context": 1048576,
+            "output": 65536
+          },
+          "modalities": {
+            "input": [
+              "text",
+              "image",
+              "pdf"
+            ],
+            "output": [
+              "text"
+            ]
+          },
+          "name": "Gemini 3 Flash",
+          "variants": {
+            "high": {
+              "thinkingLevel": "high"
+            },
+            "low": {
+              "thinkingLevel": "low"
+            },
+            "medium": {
+              "thinkingLevel": "medium"
+            },
+            "minimal": {
+              "thinkingLevel": "minimal"
+            }
+          }
+        },
+        "gemini-3-pro": {
+          "limit": {
+            "context": 1048576,
+            "output": 65535
+          },
+          "modalities": {
+            "input": [
+              "text",
+              "image",
+              "pdf"
+            ],
+            "output": [
+              "text"
+            ]
+          },
+          "name": "Gemini 3 Pro",
+          "variants": {
+            "high": {
+              "thinkingLevel": "high"
+            },
+            "low": {
+              "thinkingLevel": "low"
+            }
+          }
+        }
+      }
+    },
+    "nvidia": {
+      "models": {
+        "minimaxai/minimax-m2.1": {
+          "limit": {
+            "context": 196608,
+            "output": 128000
+          },
+          "name": "nvidia-m2.1"
+        },
+        "z-ai/glm4.7": {
+          "limit": {
+            "context": 204800,
+            "output": 131072
+          },
+          "name": "nvidia-glm4.7"
+        }
+      },
+      "npm": "@ai-sdk/openai-compatible",
+      "options": {
+        "apiKey": "<YOUR_NVIDIA_API_KEY>",
+        "baseURL": "https://integrate.api.nvidia.com/v1"
+      }
+    },
+    "minimax": {
+      "npm": "@ai-sdk/anthropic",
+      "options": {
+        "baseURL": "https://api.minimaxi.com/anthropic/v1",
+        "apiKey": "<YOUR_MINIMAX_API_KEY>"
+      },
+      "models": {
+        "MiniMax-M2.5": {
+          "name": "MiniMax-M2.5"
+        }
+      }
+    },
+    "openrouter": {
+      "npm": "@ai-sdk/openai-compatible",
+      "options": {
+        "apiKey": "<YOUR_OPENROUTER_API_KEY>",
+        "baseURL": "https://openrouter.ai/api/v1"
+      },
+      "models": {
+        "openrouter/free": {
+          "name": "OpenRouter Free Router",
+          "limit": {
+            "context": 200000,
+            "output": 65536
+          }
+        },
+        "xiaomi/mimo-v2-flash": {
+          "name": "小米 MiMo-V2-Flash",
+          "limit": {
+            "context": 262144,
+            "output": 65536
+          }
+        },
+        "xiaomi/mimo-v2-pro": {
+          "name": "小米 MiMo-V2-Pro",
+          "limit": {
+            "context": 1048576,
+            "output": 65536
+          }
+        },
+        "xiaomi/mimo-v2-omni": {
+          "name": "小米 MiMo-V2-Omni",
+          "limit": {
+            "context": 262144,
+            "output": 65536
+          }
+        },
+        "stepfun/step-3.5-flash:free": {
+          "name": "StepFun 3.5 Flash (Free)",
+          "limit": {
+            "context": 262144,
+            "output": 65536
+          }
+        },
+        "nvidia/nemotron-3-super-120b-a12b:free": {
+          "name": "NVIDIA Nemotron 3 Super (Free)",
+          "limit": {
+            "context": 262144,
+            "output": 65536
+          }
+        },
+        "z-ai/glm-4.5-air:free": {
+          "name": "GLM 4.5 Air (Free)",
+          "limit": {
+            "context": 131072,
+            "output": 65536
+          }
+        },
+        "minimax/minimax-m2.5:free": {
+          "name": "MiniMax M2.5 (Free)",
+          "limit": {
+            "context": 196608,
+            "output": 65536
+          }
+        },
+        "qwen/qwen3-coder:free": {
+          "name": "Qwen3 Coder 480B (Free)",
+          "limit": {
+            "context": 262144,
+            "output": 65536
+          }
+        },
+        "qwen/qwen3-next-80b-a3b-instruct:free": {
+          "name": "Qwen3 Next 80B (Free)",
+          "limit": {
+            "context": 262144,
+            "output": 65536
+          }
+        },
+        "openai/gpt-oss-120b:free": {
+          "name": "OpenAI GPT-OSS 120B (Free)",
+          "limit": {
+            "context": 131072,
+            "output": 65536
+          }
+        },
+        "openai/gpt-oss-20b:free": {
+          "name": "OpenAI GPT-OSS 20B (Free)",
+          "limit": {
+            "context": 131072,
+            "output": 65536
+          }
+        },
+        "meta-llama/llama-3.3-70b-instruct:free": {
+          "name": "Llama 3.3 70B (Free)",
+          "limit": {
+            "context": 65536,
+            "output": 65536
+          }
+        },
+        "mistralai/mistral-small-3.1-24b-instruct:free": {
+          "name": "Mistral Small 3.1 24B (Free)",
+          "limit": {
+            "context": 131072,
+            "output": 65536
+          }
+        },
+        "deepseek/deepseek-r1:free": {
+          "name": "DeepSeek R1 (Free)",
+          "limit": {
+            "context": 131072,
+            "output": 65536
+          }
+        },
+        "deepseek/deepseek-chat:free": {
+          "name": "DeepSeek V3 (Free)",
+          "limit": {
+            "context": 131072,
+            "output": 65536
+          }
+        }
+      }
+    }
+  },
+  "mcp": {
+    "github": {
+      "type": "remote",
+      "url": "https://api.githubcopilot.com/mcp/",
+      "headers": {
+        "Authorization": "Bearer <YOUR_GITHUB_TOKEN>"
+      }
+    }
+  },
+  "watcher": {
+    "ignore": [
+      "node_modules/**",
+      "dist/**",
+      ".git/**",
+      "target/**",
+      "build/**"
+    ]
+  }
+}
